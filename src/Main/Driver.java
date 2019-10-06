@@ -11,6 +11,7 @@ public class Driver implements Runnable {
 
     private JFrame frame;
     private static Canvas canvas;
+    static boolean running = true;
 
     Pathfinding pathfinding;
 
@@ -39,16 +40,19 @@ public class Driver implements Runnable {
         Graphics g = bs.getDrawGraphics();
         for (Entities e : openset){
             g.setColor(Color.GREEN);
-            g.drawRect(e.getX(), e.getY(), s, s);
+            g.fillRect(e.getX()*s, e.getY()*s, s, s);
         }
         for (Entities f : closedset){
-            g.setColor(Color.GREEN);
-            g.drawRect(f.getX(), f.getY(), s, s);
+            g.setColor(Color.RED);
+            g.fillRect(f.getX()*s, f.getY()*s, s, s);
+        }
+        for (Entities p : path){
+            g.setColor(Color.CYAN);
+            g.fillRect(p.getX()*s, p.getY()*s, s, s);
         }
         for (Entities w : wallset){
             g.setColor(Color.BLACK);
             g.fillRect(w.getX()*s, w.getY()*s, s, s);
-
         }
         g.setColor(Color.BLACK);
         for (int i = 0; i < xMAX; i++) {
@@ -63,23 +67,29 @@ public class Driver implements Runnable {
     public void initialize() {
         for (int i = 0; i < yMAX; i++) {
             for (int j = 0; j < xMAX; j++) {
-                Entities.list[i][j] = new Entities(false, i, j, 10, Integer.MAX_VALUE, 0);
+                Entities.list[i][j] = new Entities(false, j, i, 10, Integer.MAX_VALUE, 0);
             }
         }
-
+        for (int i = 0; i < yMAX-1; i++) {
+            for (int j = 0; j < xMAX-1; j++) {
+                Entities.list[i][j].neightbours = addNeightbour(Entities.list[i][j].neightbours, i , j);
+            }
+        }
+        Entities.list[0][0].setfScore(0);
+        openset.add(Entities.list[0][0]);
         pathfinding = new Pathfinding();
     }
 
     public void update() {
-        //pathfinding.update();
-        wallset.add(new Entities(false, 5, 6, 0, 0, 0));
+        pathfinding.update();
+        //wallset.add(new Entities(false, 5, 6, 0, 0, 0));
     }
 
     @Override
     public void run() {
-        BasicTimer timer = new BasicTimer(6000);
+        BasicTimer timer = new BasicTimer(30);
         initialize();
-        while (true) {
+        while (running) {
             timer.sync();
             render();
             update();
