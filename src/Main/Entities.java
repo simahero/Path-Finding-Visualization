@@ -5,13 +5,14 @@ import java.util.ArrayList;
 
 public class Entities {
 
-    private boolean isWall;
+    public boolean isWall;
     private int x;
     private int y;
-    private int fScore;
-    private int gScore;
+    public int fScore;
+    public int gScore;
+    public int hScore;
     ArrayList<Entities> neightbours = new ArrayList<>();
-    Entities cameFrom;
+    public Entities cameFrom;
     static Entities[][] list = new Entities[Driver.yMAX][Driver.xMAX];
 
     public Entities(boolean isWall, int x, int y, int fScore, int gScore, int hScore) {
@@ -38,8 +39,6 @@ public class Entities {
     public void sethScore(int hScore) {
         this.hScore = hScore;
     }
-
-    private int hScore;
 
     public boolean isWall() {
         return isWall;
