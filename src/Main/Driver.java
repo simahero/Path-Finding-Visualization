@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.io.IOException;
-import java.util.ArrayList;
 
 
 public class Driver implements Runnable {
@@ -15,15 +14,16 @@ public class Driver implements Runnable {
     MouseHandler mh = new MouseHandler();
 
     public static int s = 50;
-    public static int xMAX = 18; //24 : 18
-    public static int yMAX = 18;
+    //public static int offset = 300;
+    public static int xMAX = 19; //24 : 18
+    public static int yMAX = 19;
 
     public Driver() throws IOException {
         frame = new JFrame("Pathfinding");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(canvas = new Canvas());
         canvas.addMouseListener(mh);
-        frame.setSize(920, 940); //1217 : 940
+        frame.setSize(970, 990); //1217 : 940
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         new Thread(this).start();
@@ -31,16 +31,21 @@ public class Driver implements Runnable {
     }
 
     @Override
-    public void run(){
-        BasicTimer basicTimer = new BasicTimer(60);
+    public void run() {
+        BasicTimer basicTimer = new BasicTimer(30);
         pathfinding = new Astar();
         Astar.init();
+        MazeGenerator mazeGenerator = new MazeGenerator(Astar.list);
+        mazeGenerator.init();
         Astar.addNeightbour();
-        while (true){
+
+        while (true) {
             basicTimer.sync();
+            //mazeGenerator.init();
             update();
             render();
-            System.out.println(Astar.end.neightbours.size());
+            System.out.println(MazeGenerator.notvisited.size());
+            System.out.println(Astar.end.secondNeightbours.size());
         }
     }
 
@@ -57,27 +62,27 @@ public class Driver implements Runnable {
         }
         Graphics g = bs.getDrawGraphics();
         g.setColor(Color.WHITE);
-        g.fillRect(0, 0, xMAX*s, yMAX*s);
-        for (Node e : Astar.openset){
+        g.fillRect(0, 0, xMAX * s, yMAX * s);
+        for (Node e : Astar.openset) {
             g.setColor(Color.GREEN);
-            g.fillRect(e.getX()*s, e.getY()*s, s, s);
+            g.fillRect(e.getX() * s, e.getY() * s, s, s);
         }
-        for (Node f : Astar.closedset){
+        for (Node f : Astar.closedset) {
             g.setColor(Color.RED);
-            g.fillRect(f.getX()*s, f.getY()*s, s, s);
+            g.fillRect(f.getX() * s, f.getY() * s, s, s);
         }
-        for (Node p : Astar.path){
+        for (Node p : Astar.path) {
             g.setColor(Color.CYAN);
-            g.fillRect(p.getX()*s, p.getY()*s, s, s);
+            g.fillRect(p.getX() * s, p.getY() * s, s, s);
         }
-        for (Node w : Astar.wallset){
+        for (Node w : Astar.wallset) {
             g.setColor(Color.BLACK);
-            g.fillRect(w.getX()*s, w.getY()*s, s, s);
+            g.fillRect(w.getX() * s, w.getY() * s, s, s);
         }
         g.setColor(Color.BLACK);
         for (int i = 0; i < xMAX; i++) {
             for (int j = 0; j < yMAX; j++) {
-                g.drawRect(i * s, j*s, s, s);
+                g.drawRect(i * s, j * s, s, s);
             }
         }
         g.dispose();

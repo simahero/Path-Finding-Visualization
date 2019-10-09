@@ -11,13 +11,20 @@ public class Node {
     public int y;
     public Node cameFrom;
     public boolean isWall;
+    public boolean visited;
     public ArrayList<Node> neightbours = new ArrayList<>();
+    public ArrayList<Node> secondNeightbours = new ArrayList<>();
 
-    public Node(int gScore, int fScore, int x, int y) {
+    public Node(int gScore, int fScore, int x, int y, boolean visited) {
         this.gScore = gScore;
         this.fScore = fScore;
         this.x = x;
         this.y = y;
+        this.visited = visited;
+    }
+
+    public boolean isVisited(){
+        return this.visited;
     }
 
     public void setgScore(int gScore) {

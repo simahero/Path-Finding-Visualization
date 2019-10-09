@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/Main/Astar.java" line="38" />
+    <bookmark url="file://$PROJECT_DIR$/src/Main/Astar.java" line="35" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cd2383c-f3e5-4ca6-9cc1-fac04a5ad9c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Main/Astar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main/MazeGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pathfinding/Main/Astar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pathfinding/Main/Astar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pathfinding/Main/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pathfinding/Main/Driver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pathfinding/Main/Entities.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pathfinding/Main/MouseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pathfinding/Main/MouseHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pathfinding/Main/Pathfinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pathfinding/Main/Pathfinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pathfinding/Main/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pathfinding/Main/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Astar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Astar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Entities.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/MouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/MouseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Pathfinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Pathfinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Node.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,58 +25,93 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main/Driver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-495">
-              <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1010#1011#0" expanded="true" />
-                <element signature="e#1036#1037#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Main/Astar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#getPath#0;class#Astar#0" />
-                <element signature="method#addWall#0;class#Astar#0" />
-                <element signature="method#addNeightbour#0;class#Astar#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main/Node.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main/MouseHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5281593">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Main/Driver.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="395">
+                  <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#main#0;class#Driver#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Main/MazeGenerator.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="182">
+                  <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#addSecondNeightbour#0;class#MazeGenerator#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Main/Astar.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="284">
+                  <caret line="25" selection-start-line="25" selection-end-line="25" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#search#0;class#Astar#0" />
+                    <element signature="method#getPath#0;class#Astar#0" />
+                    <element signature="method#addWall#0;class#Astar#0" />
+                    <element signature="method#addNeightbour#0;class#Astar#0" />
+                    <element signature="method#heuristic#0;class#Astar#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Main/Node.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-192">
+                  <caret line="15" column="65" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Main/MouseHandler.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="539">
+                  <caret line="35" selection-start-line="35" selection-end-line="35" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Main/Driver.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="170">
+                  <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#main#0;class#Driver#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -102,8 +134,9 @@
         <option value="$PROJECT_DIR$/src/Main/Pathfinding.java" />
         <option value="$PROJECT_DIR$/src/Main/MouseHandler.java" />
         <option value="$PROJECT_DIR$/src/Main/Node.java" />
-        <option value="$PROJECT_DIR$/src/Main/Driver.java" />
         <option value="$PROJECT_DIR$/src/Main/Astar.java" />
+        <option value="$PROJECT_DIR$/src/Main/Driver.java" />
+        <option value="$PROJECT_DIR$/src/Main/MazeGenerator.java" />
       </list>
     </option>
   </component>
@@ -117,7 +150,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -171,6 +203,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -255,7 +288,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.052238807" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2238806" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -264,7 +297,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33118972" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33440515" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -272,7 +305,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3279743" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32690248" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -304,16 +337,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/PathFinding2.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main/Entities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Entities.java" />
     <entry file="file://$PROJECT_DIR$/src/Main/Pathfinding.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -321,9 +345,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-192">
+          <caret line="15" column="65" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/MouseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
+        <state relative-caret-position="539">
           <caret line="35" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -331,34 +362,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Node.java">
+    <entry file="file://$PROJECT_DIR$/src/Main/Astar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="284">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#search#0;class#Astar#0" />
+            <element signature="method#getPath#0;class#Astar#0" />
+            <element signature="method#addWall#0;class#Astar#0" />
+            <element signature="method#addNeightbour#0;class#Astar#0" />
+            <element signature="method#heuristic#0;class#Astar#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-495">
-          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+        <state relative-caret-position="395">
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1010#1011#0" expanded="true" />
-            <element signature="e#1036#1037#0" expanded="true" />
+            <element signature="method#main#0;class#Driver#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Astar.java">
+    <entry file="file://$PROJECT_DIR$/src/Main/MazeGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+        <state relative-caret-position="182">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getPath#0;class#Astar#0" />
-            <element signature="method#addWall#0;class#Astar#0" />
-            <element signature="method#addNeightbour#0;class#Astar#0" />
+            <element signature="method#addSecondNeightbour#0;class#MazeGenerator#0" />
           </folding>
         </state>
       </provider>

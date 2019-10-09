@@ -21,12 +21,9 @@ public class Astar implements Pathfinding {
         Random r = new Random();
         for (int i = 0; i < xMAX; i++) {
             for (int j = 0; j < yMAX; j++) {
-                list[i][j] = new Node(10, Integer.MAX_VALUE, i, j);
-                double d = r.nextDouble();
-                if (d < 0.4) {
-                    list[i][j].isWall = true;
-                    wallset.add(list[i][j]);
-                }
+                list[i][j] = new Node(10, Integer.MAX_VALUE, i, j, false);
+
+
             }
         }
         start = list[0][0];
@@ -114,7 +111,9 @@ public class Astar implements Pathfinding {
                     if (!list[i][j - 1].isWall) {
                         n.add(list[i][j - 1]);
                     }
+
                 }
+
                 if (i < xMAX - 1 && j < yMAX - 1) {
                     if (!list[i + 1][j + 1].isWall) {
                         n.add(list[i + 1][j + 1]);
@@ -135,6 +134,8 @@ public class Astar implements Pathfinding {
                         n.add(list[i - 1][j - 1]);
                     }
                 }
+
+
             }
         }
     }
