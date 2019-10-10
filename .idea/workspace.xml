@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/Main/Algorithms/Astar.java" line="39" />
+    <bookmark url="file://$PROJECT_DIR$/src/Main/Algorithms/Astar.java" line="22" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cd2383c-f3e5-4ca6-9cc1-fac04a5ad9c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/Algorithms/Dijkstra.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/Mategenerator/Chamber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/Mategenerator/RecursiveDivison.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main/Algorithms/Pathfinder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pathfinding/Main/Astar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pathfinding/Main/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pathfinding/Main/Driver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pathfinding/Main/MazeGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pathfinding/Main/Pathfinding.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Astar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Algorithms/Astar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Algorithms/Astar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Algorithms/Astar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Algorithms/Dijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Algorithms/Dijkstra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Algorithms/Pathfinding.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/MazeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Mategenerator/MazeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Pathfinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Algorithms/Pathfinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Mategenerator/MazeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Mategenerator/MazeGenerator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,115 +24,22 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.57956207">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Main/Driver.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="41" column="30" lean-forward="true" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#Driver#0;class#Driver#0" />
-                    <element signature="method#render#0;class#Driver#0" />
-                    <element signature="method#main#0;class#Driver#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Main/Mategenerator/MazeGenerator.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="191">
-                  <caret line="18" selection-start-line="18" selection-end-line="18" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Main/Algorithms/Astar.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="19" selection-start-line="19" selection-end-line="19" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#search#0;class#Astar#0" />
-                    <element signature="method#getPath#0;class#Astar#0" />
-                    <element signature="method#addWall#0;class#Astar#0" />
-                    <element signature="method#addNeightbour#0;class#Astar#0" />
-                    <element signature="method#heuristic#0;class#Astar#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Main/Algorithms/Dijkstra.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="148">
-                  <caret line="21" selection-start-line="21" selection-end-line="21" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#getPath#0;class#Astar#0" />
-                    <element signature="method#addWall#0;class#Astar#0" />
-                    <element signature="method#addNeightbour#0;class#Astar#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Main/Driver.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="578">
-                  <caret line="61" column="41" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="41" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#main#0;class#Driver#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Main/Algorithms/Dijkstra.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#getPath#0;class#Dijkstra#0" />
-                    <element signature="method#addWall#0;class#Dijkstra#0" />
-                    <element signature="method#addNeightbour#0;class#Dijkstra#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Main/Algorithms/Pathfinding.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Main/Driver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#Driver#0;class#Driver#0" />
+                <element signature="method#render#0;class#Driver#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -164,11 +65,12 @@
         <option value="$PROJECT_DIR$/src/Main/Astar.java" />
         <option value="$PROJECT_DIR$/src/Main/Mategenerator/Chamber.java" />
         <option value="$PROJECT_DIR$/src/Main/Mategenerator/RecursiveDivison.java" />
-        <option value="$PROJECT_DIR$/src/Main/Mategenerator/MazeGenerator.java" />
-        <option value="$PROJECT_DIR$/src/Main/Algorithms/Pathfinding.java" />
+        <option value="$PROJECT_DIR$/src/Main/Driver.java" />
         <option value="$PROJECT_DIR$/src/Main/Algorithms/Dijkstra.java" />
         <option value="$PROJECT_DIR$/src/Main/Algorithms/Astar.java" />
-        <option value="$PROJECT_DIR$/src/Main/Driver.java" />
+        <option value="$PROJECT_DIR$/src/Main/Mategenerator/MazeGenerator.java" />
+        <option value="$PROJECT_DIR$/src/Main/Algorithms/Pathfinding.java" />
+        <option value="$PROJECT_DIR$/src/Main/Algorithms/Pathfinder.java" />
       </list>
     </option>
   </component>
@@ -182,6 +84,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -249,7 +152,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -334,7 +236,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26972282" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27238807" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -342,16 +244,16 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.78731346" visible="true" weight="0.33440515" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.3290461" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.78678036" weight="0.33440515" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.21268657" side_tool="true" visible="true" weight="0.33440515" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.33440515" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4978678" weight="0.32690248" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49733475" weight="0.32690248" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -364,16 +266,8 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main/test.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main/Algorithms/Astar.java" />
     <entry file="file://$PROJECT_DIR$/Pathfinding.iml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/BasicTimer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="734">
-          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-        </state>
-      </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -388,16 +282,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="65" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/MouseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -419,20 +303,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Mategenerator/MazeGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/Main/BasicTimer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="867">
+          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/MouseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Algorithms/Pathfinding.java">
+    <entry file="file://$PROJECT_DIR$/src/Main/Mategenerator/MazeGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+        <state relative-caret-position="442">
+          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -441,41 +332,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/Algorithms/Astar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="153">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#init#0;class#Astar#0" />
             <element signature="method#search#0;class#Astar#0" />
-            <element signature="method#getPath#0;class#Astar#0" />
-            <element signature="method#addWall#0;class#Astar#0" />
-            <element signature="method#addNeightbour#0;class#Astar#0" />
-            <element signature="method#heuristic#0;class#Astar#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/Algorithms/Dijkstra.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="153">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getPath#0;class#Astar#0" />
-            <element signature="method#addWall#0;class#Astar#0" />
-            <element signature="method#addNeightbour#0;class#Astar#0" />
+            <element signature="method#init#0;class#Dijkstra#0" />
+            <element signature="method#search#0;class#Dijkstra#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Algorithms/Pathfinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#addNeighbour#0;class#Pathfinding#0" />
+            <element signature="method#getPath#0;class#Pathfinding#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="41" column="30" lean-forward="true" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+        <state relative-caret-position="425">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Driver#0;class#Driver#0" />
             <element signature="method#render#0;class#Driver#0" />
-            <element signature="method#main#0;class#Driver#0" />
           </folding>
         </state>
       </provider>

@@ -1,29 +1,26 @@
 package Main;
 
 import Main.Algorithms.Astar;
-import Main.Algorithms.Dijkstra;
-import Main.Algorithms.Pathfinding;
+import Main.Algorithms.Pathfinder;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
-import java.io.IOException;
 
 public class Driver implements Runnable {
 
-    private JFrame frame;
-    private static Canvas canvas;
-    static Pathfinding pathfinding;
-    MouseHandler mh = new MouseHandler();
+    private Canvas canvas;
+    private Pathfinder pathfinder;
 
-    public static int s = 50;
+    protected static int s = 50;
     public static int xMAX = 19; //24 : 18
     public static int yMAX = 19;
 
     public Driver() {
-        frame = new JFrame("Pathfinding");
+        JFrame frame = new JFrame("Pathfinder");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(canvas = new Canvas());
-        canvas.addMouseListener(mh);
+        canvas.addMouseListener(new MouseHandler());
         frame.setSize(970, 990); //1217 : 940
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
@@ -33,10 +30,10 @@ public class Driver implements Runnable {
 
     @Override
     public void run() {
-        BasicTimer basicTimer = new BasicTimer(30);
-        pathfinding = new Dijkstra();
-        pathfinding.init();
-        pathfinding.addNeightbour();
+        BasicTimer basicTimer = new BasicTimer(60);
+        pathfinder = new Astar();
+        pathfinder.init();
+        pathfinder.addNeighbour();
 
         while (true) {
             basicTimer.sync();
@@ -46,9 +43,8 @@ public class Driver implements Runnable {
     }
 
     private void update() {
-        pathfinding.search();
+        pathfinder.search();
     }
-
 
     private void render() {
         BufferStrategy bs = canvas.getBufferStrategy();
@@ -59,11 +55,11 @@ public class Driver implements Runnable {
         Graphics g = bs.getDrawGraphics();
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, xMAX * s, yMAX * s);
-        for (Node e : Pathfinding.openset) {
+        for (Node e : Pathfinder.openset) {
             g.setColor(Color.GREEN);
             g.fillRect(e.getX() * s, e.getY() * s, s, s);
         }
-        for (Node f : Pathfinding.closedset) {
+        for (Node f : Pathfinder.closedset) {
             g.setColor(Color.RED);
             g.fillRect(f.getX() * s, f.getY() * s, s, s);
         }
@@ -85,8 +81,7 @@ public class Driver implements Runnable {
         bs.show();
     }
 
-
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         new Main.Driver();
     }
 }

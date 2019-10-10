@@ -1,6 +1,7 @@
 package Main.Mategenerator;
 
 import Main.Algorithms.Astar;
+import Main.Algorithms.Pathfinder;
 import Main.Node;
 
 import java.util.ArrayList;
@@ -20,8 +21,7 @@ public class MazeGenerator {
                     notvisited.add(n[i][j]);
                     double d = r.nextDouble();
                     if (d < 0) {
-                        Astar.list[i][j].isWall = true;
-                        Astar.wallset.add(Astar.list[i][j]);
+                        Pathfinder.addWall(n[i][j]);
                     }
                 }
             }
