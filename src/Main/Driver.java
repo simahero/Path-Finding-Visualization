@@ -1,10 +1,12 @@
 package Main;
 
+import Main.Algorithms.Astar;
+import Main.Algorithms.Dijkstra;
+import Main.Algorithms.Pathfinding;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.io.IOException;
-
 
 public class Driver implements Runnable {
 
@@ -14,11 +16,10 @@ public class Driver implements Runnable {
     MouseHandler mh = new MouseHandler();
 
     public static int s = 50;
-    //public static int offset = 300;
     public static int xMAX = 19; //24 : 18
     public static int yMAX = 19;
 
-    public Driver() throws IOException {
+    public Driver() {
         frame = new JFrame("Pathfinding");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(canvas = new Canvas());
@@ -33,19 +34,14 @@ public class Driver implements Runnable {
     @Override
     public void run() {
         BasicTimer basicTimer = new BasicTimer(30);
-        pathfinding = new Astar();
-        Astar.init();
-        MazeGenerator mazeGenerator = new MazeGenerator(Astar.list);
-        mazeGenerator.init();
-        Astar.addNeightbour();
+        pathfinding = new Dijkstra();
+        pathfinding.init();
+        pathfinding.addNeightbour();
 
         while (true) {
             basicTimer.sync();
-            //mazeGenerator.init();
             update();
             render();
-            System.out.println(MazeGenerator.notvisited.size());
-            System.out.println(Astar.end.secondNeightbours.size());
         }
     }
 
@@ -63,11 +59,11 @@ public class Driver implements Runnable {
         Graphics g = bs.getDrawGraphics();
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, xMAX * s, yMAX * s);
-        for (Node e : Astar.openset) {
+        for (Node e : Pathfinding.openset) {
             g.setColor(Color.GREEN);
             g.fillRect(e.getX() * s, e.getY() * s, s, s);
         }
-        for (Node f : Astar.closedset) {
+        for (Node f : Pathfinding.closedset) {
             g.setColor(Color.RED);
             g.fillRect(f.getX() * s, f.getY() * s, s, s);
         }

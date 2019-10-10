@@ -1,24 +1,30 @@
-package Main;
+package Main.Algorithms;
 
+import Main.Node;
 import java.util.ArrayList;
-import java.util.Random;
 
 import static Main.Driver.xMAX;
 import static Main.Driver.yMAX;
 
-public class Astar implements Pathfinding {
+public class Dijkstra extends Pathfinding {
 
-    static Node start;
-    static Node end;
-    static Node[][] list = new Node[xMAX][yMAX];
-    static ArrayList<Node> openset = new ArrayList<>();
-    static ArrayList<Node> closedset = new ArrayList<>();
-    static ArrayList<Node> path = new ArrayList<>();
-    static ArrayList<Node> wallset = new ArrayList<>();
+    public Dijkstra(){
+    }
+
+    /*
+    static public Node start;
+    static public Node end;
+    public Node[][] list = new Node[xMAX][yMAX];
+    static public ArrayList<Node> openset = new ArrayList<>();
+    static public ArrayList<Node> closedset = new ArrayList<>();
+    static public ArrayList<Node> path = new ArrayList<>();
+    static public ArrayList<Node> wallset = new ArrayList<>();
+
+     */
 
 
-    public static void init() {
-        Random r = new Random();
+    @Override
+    public void init() {
         for (int i = 0; i < xMAX; i++) {
             for (int j = 0; j < yMAX; j++) {
                 list[i][j] = new Node(10, Integer.MAX_VALUE, i, j, false);
@@ -33,11 +39,11 @@ public class Astar implements Pathfinding {
         end.isWall = false;
         wallset.remove(end);
         start.fScore = 0;
-        start.hScore = heuristic(start, end);
         openset.add(start);
 
     }
 
+    @Override
     public void search() {
         if (openset.size() > 0) {
             int winner = 0;
@@ -58,20 +64,20 @@ public class Astar implements Pathfinding {
                     if (closedset.contains(nghtbr)) {
                         continue;
                     }
-                    double tempG = current.gScore + heuristic(nghtbr, current);
+                    double tempF = current.gScore + current.fScore;
                     if (!openset.contains(nghtbr)) {
                         openset.add(nghtbr);
-                    } else if (tempG >= nghtbr.gScore) {
+                    } else if (tempF >= nghtbr.gScore) {
                         continue;
                     }
                     nghtbr.cameFrom = current;
-                    nghtbr.gScore = tempG;
-                    nghtbr.fScore = nghtbr.gScore + heuristic(nghtbr, end);
+                    nghtbr.fScore = tempF;
                 }
             }
         }
     }
 
+    @Override
     public void getPath(Node end) {
         Node temp = end;
         path.add(temp);
@@ -86,7 +92,8 @@ public class Astar implements Pathfinding {
 
     }
 
-    public static void addNeightbour() {
+    @Override
+    public void addNeightbour() {
         for (int i = 0; i < xMAX; i++) {
             for (int j = 0; j < yMAX; j++) {
                 ArrayList<Node> n = list[i][j].neightbours;
@@ -111,9 +118,7 @@ public class Astar implements Pathfinding {
                     if (!list[i][j - 1].isWall) {
                         n.add(list[i][j - 1]);
                     }
-
                 }
-
                 if (i < xMAX - 1 && j < yMAX - 1) {
                     if (!list[i + 1][j + 1].isWall) {
                         n.add(list[i + 1][j + 1]);
@@ -134,14 +139,7 @@ public class Astar implements Pathfinding {
                         n.add(list[i - 1][j - 1]);
                     }
                 }
-
-
             }
         }
-    }
-
-    public static double heuristic(Node a, Node b) {
-        double h = Math.sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
-        return h;
     }
 }
