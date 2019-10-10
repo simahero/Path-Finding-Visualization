@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cd2383c-f3e5-4ca6-9cc1-fac04a5ad9c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Main/Algorithms/Pathfinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Algorithms/Astar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Algorithms/Astar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Algorithms/Dijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Algorithms/Dijkstra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Algorithms/Pathfinding.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Mategenerator/MazeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Mategenerator/MazeGenerator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,12 +22,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="187">
+              <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#Driver#0;class#Driver#0" />
-                <element signature="method#render#0;class#Driver#0" />
+                <element signature="e#3206#3207#0" expanded="true" />
+                <element signature="e#3239#3240#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,12 +59,12 @@
         <option value="$PROJECT_DIR$/src/Main/Astar.java" />
         <option value="$PROJECT_DIR$/src/Main/Mategenerator/Chamber.java" />
         <option value="$PROJECT_DIR$/src/Main/Mategenerator/RecursiveDivison.java" />
-        <option value="$PROJECT_DIR$/src/Main/Driver.java" />
         <option value="$PROJECT_DIR$/src/Main/Algorithms/Dijkstra.java" />
         <option value="$PROJECT_DIR$/src/Main/Algorithms/Astar.java" />
         <option value="$PROJECT_DIR$/src/Main/Mategenerator/MazeGenerator.java" />
         <option value="$PROJECT_DIR$/src/Main/Algorithms/Pathfinding.java" />
         <option value="$PROJECT_DIR$/src/Main/Algorithms/Pathfinder.java" />
+        <option value="$PROJECT_DIR$/src/Main/Driver.java" />
       </list>
     </option>
   </component>
@@ -236,7 +230,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27238807" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27238807" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -245,13 +239,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.3290461" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.78678036" weight="0.33440515" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.78571427" visible="true" weight="0.33440515" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.33440515" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.21428572" side_tool="true" visible="true" weight="0.33440515" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49733475" weight="0.32690248" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -368,12 +362,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="187">
+          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Driver#0;class#Driver#0" />
-            <element signature="method#render#0;class#Driver#0" />
+            <element signature="e#3206#3207#0" expanded="true" />
+            <element signature="e#3239#3240#0" expanded="true" />
           </folding>
         </state>
       </provider>

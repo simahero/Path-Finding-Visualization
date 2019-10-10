@@ -2,26 +2,46 @@ package Main;
 
 import Main.Algorithms.Astar;
 import Main.Algorithms.Pathfinder;
+import com.sun.xml.internal.messaging.saaj.soap.JpegDataContentHandler;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
 public class Driver implements Runnable {
 
     private Canvas canvas;
+    private JPanel panel;
+    Graphics g;
     private Pathfinder pathfinder;
 
     protected static int s = 50;
     public static int xMAX = 19; //24 : 18
     public static int yMAX = 19;
+    private boolean running = true;
 
     public Driver() {
         JFrame frame = new JFrame("Pathfinder");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(canvas = new Canvas());
+        frame.setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+        c.fill = GridBagConstraints.BOTH;
+        c.gridx = 0;
+        c.gridy = 0;
+        c.ipadx = 300;
+        c.ipady = s*yMAX;
+        frame.add(panel = new JPanel(), c);
+        panel.setLayout(new BorderLayout());
+        panel.add(new Button("GO!"));
+        panel.add(new Button("STOP!"));
+        c.gridx = 1;
+        c.gridy = 0;
+        c.ipadx = s*xMAX+1;
+        c.ipady = s*yMAX+1;
+        frame.add(canvas = new Canvas(), c);
         canvas.addMouseListener(new MouseHandler());
-        frame.setSize(970, 990); //1217 : 940
+        frame.setSize(1281, 1020); //1217 : 940
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         new Thread(this).start();
@@ -35,7 +55,7 @@ public class Driver implements Runnable {
         pathfinder.init();
         pathfinder.addNeighbour();
 
-        while (true) {
+        while (running) {
             basicTimer.sync();
             update();
             render();
@@ -44,6 +64,10 @@ public class Driver implements Runnable {
 
     private void update() {
         pathfinder.search();
+    }
+
+    private void renderInit(){
+
     }
 
     private void render() {
