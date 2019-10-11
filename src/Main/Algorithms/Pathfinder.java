@@ -90,4 +90,19 @@ public abstract class Pathfinder {
 
     }
 
+    public static void reset(){
+        openset.clear();
+        closedset.clear();
+        path.clear();
+        wallset.clear();
+    }
+
+    public static void addClickedWall(int x, int y){
+        if (list[x][y].isWall){
+            removeWall(list[x][y]);
+        } else {
+            addWall(list[x][y]);
+        }
+    }
+
 }

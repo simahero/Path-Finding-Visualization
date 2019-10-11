@@ -15,12 +15,12 @@ public class Node {
     public ArrayList<Node> neightbours = new ArrayList<>();
     public ArrayList<Node> secondNeightbours = new ArrayList<>();
 
-    public Node(int gScore, int fScore, int x, int y, boolean visited) {
+    public Node(int gScore, int fScore, int x, int y, boolean isWall) {
         this.gScore = gScore;
         this.fScore = fScore;
         this.x = x;
         this.y = y;
-        this.visited = visited;
+        this.isWall = isWall;
     }
 
     public boolean isVisited(){
