@@ -18,6 +18,15 @@ public abstract class Pathfinder {
 
     public abstract void init();
 
+    public static void deleteNeightbours(){
+        for (int i = 0; i < xMAX; i++) {
+            for (int j = 0; j < yMAX; j++) {
+                ArrayList<Node> n = list[i][j].neightbours;
+                n.clear();
+            }
+        }
+    }
+
     public void addNeighbour() {
         for (int i = 0; i < xMAX; i++) {
             for (int j = 0; j < yMAX; j++) {
@@ -44,6 +53,14 @@ public abstract class Pathfinder {
                         n.add(list[i][j - 1]);
                     }
                 }
+            }
+        }
+    }
+
+    public void addNeighbourDiagnal(){
+        for (int i = 0; i < xMAX; i++) {
+            for (int j = 0; j < yMAX; j++) {
+                ArrayList<Node> n = list[i][j].neightbours;
                 if (i < xMAX - 1 && j < yMAX - 1) {
                     if (!list[i + 1][j + 1].isWall) {
                         n.add(list[i + 1][j + 1]);
@@ -95,6 +112,15 @@ public abstract class Pathfinder {
         closedset.clear();
         path.clear();
         wallset.clear();
+    }
+
+    public static void wipeboard(){
+        openset.clear();
+        closedset.clear();
+        path.clear();
+        wallset.clear();
+        openset.add(start);
+        deleteNeightbours();
     }
 
     public static void addClickedWall(int x, int y){

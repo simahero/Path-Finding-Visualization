@@ -5,6 +5,7 @@ import Main.Algorithms.Pathfinder;
 import Main.EventHandlers.ButtonHandler;
 import Main.EventHandlers.MouseHandler;
 import Main.Mategenerator.MazeGenerator;
+import javafx.scene.layout.Border;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,6 +13,7 @@ import java.awt.image.BufferStrategy;
 
 public class Driver implements Runnable {
 
+    private JFrame frame;
     private Canvas canvas;
     private JPanel panel;
     public static Pathfinder pathfinder;
@@ -20,6 +22,8 @@ public class Driver implements Runnable {
     JButton start;
     JButton stop;
     JButton clear;
+    JButton wipeboard;
+    public static JCheckBox allowdiagnal;
     JSlider slider;
 
     public static Thread t;
@@ -28,17 +32,19 @@ public class Driver implements Runnable {
     public static int s = 50;
     public static int xMAX = 19; //24 : 18
     public static int yMAX = 19;
-    public static boolean running = false;
+    int screenheight = 1240;
+    int screenwidth = screenheight/2*3;
+
 
     public Driver() {
-        JFrame frame = new JFrame("Pathfinder");
+        frame = new JFrame("Pathfinder");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
-        c.ipadx = s * xMAX + 201;
-        c.ipady = s * yMAX + 1;
+        c.ipadx = s * xMAX+1 ;
+        c.ipady = s * yMAX + s ;
         frame.add(canvas = new Canvas(), c);
         canvas.addMouseListener(new MouseHandler());
         c.fill = GridBagConstraints.BOTH;
@@ -47,6 +53,7 @@ public class Driver implements Runnable {
         c.ipadx = 0;
         //c.ipady = s * yMAX;
         frame.add(panel = new JPanel(), c);
+        panel.setLayout(new GridLayout());
 
         /*******************************************
          *             ADDIMG BUTTONS
@@ -61,6 +68,9 @@ public class Driver implements Runnable {
                 clear = new JButton("Add random walls!");
                 clear.setActionCommand("clear");
                 clear.addActionListener(bh);
+                wipeboard = new JButton("Clear!");
+                wipeboard.setActionCommand("wipeboard");
+                wipeboard.addActionListener(bh);
 
         /*******************************************
          *             ADDIMG SLIDERS
@@ -73,12 +83,21 @@ public class Driver implements Runnable {
                 slider.setMinorTickSpacing(1);
                 slider.setPaintLabels(true);
 
-                //slider.addChangeListener();
-            panel.add(BorderLayout.NORTH, stop);
-            panel.add(BorderLayout.NORTH, start);
-            panel.add(BorderLayout.NORTH, clear);
-            panel.add(BorderLayout.EAST, slider);
-        frame.setSize(1350, 1020); //1217 : 940
+        /*******************************************
+         *             ADDIMG CHECKBOXES
+         *******************************************/
+
+                allowdiagnal = new JCheckBox();
+                allowdiagnal.addItemListener(bh);
+                allowdiagnal.setSelected(true);
+
+            panel.add(stop);
+            panel.add(start);
+            panel.add(clear);
+            panel.add(slider);
+            panel.add(wipeboard);
+            panel.add(allowdiagnal);
+        frame.setSize(screenwidth, screenheight); //1217 : 940
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         new Thread(this).start();
@@ -91,13 +110,18 @@ public class Driver implements Runnable {
         MazeGenerator mg = new MazeGenerator();
         pathfinder = new Astar();
         pathfinder.init();
-        //mg.addRandomWalls(Pathfinder.list);
-        //pathfinder.addNeighbour();
 
         while (true) {
             basicTimer.sync();
+            screenheight = frame.getHeight();
+            screenwidth = screenheight/2*3;
+            frame.setSize(screenwidth, screenheight);
+            s = (frame.getHeight()/yMAX+6);
             if (ButtonHandler.go) {
                 pathfinder.addNeighbour();
+                if (ButtonHandler.allowdiagnals){
+                    pathfinder.addNeighbourDiagnal();
+                }
                 update();
             }
             render();
@@ -106,10 +130,11 @@ public class Driver implements Runnable {
                 pathfinder.init();
                 mg.addRandomWalls(Pathfinder.list);
                 ButtonHandler.clear = false;
-                pathfinder.addNeighbour();
             }
-            System.out.println(MazeGenerator.e);
-
+            if (ButtonHandler.wipeboard){
+                Pathfinder.wipeboard();
+                ButtonHandler.wipeboard = false;
+            }
         }
     }
 

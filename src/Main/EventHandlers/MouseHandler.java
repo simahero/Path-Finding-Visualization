@@ -13,7 +13,8 @@ public class MouseHandler implements MouseListener, MouseMotionListener {
         int y = (int) Math.ceil(e.getY() / Driver.s);
         Pathfinder.addClickedWall(x, y);
         System.out.println("Mouse Clicked at X: " + x + " - Y: " + y);
-        //pressed = true;
+        System.out.println("clicked at realx: " + e.getX() + " , Clicket at realy: " + e.getY());
+        System.out.println(Pathfinder.list[x][y].isWall);
     }
 
     @Override
