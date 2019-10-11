@@ -25,6 +25,11 @@ public class Driver implements Runnable {
     public static JSlider slider;
     public static JComboBox algorithm;
     public static JLabel framerate = new JLabel("Set the framerate here!", SwingConstants.CENTER);
+    public static JLabel info1 = new JLabel("Click on any block to turn it to a wall or back!", SwingConstants.CENTER);
+    public static JLabel info2 = new JLabel("Green means, block waiting to be examinated!", SwingConstants.CENTER);
+    public static JLabel info3 = new JLabel("Red means, examined blocks!", SwingConstants.CENTER);
+    public static JLabel info4 = new JLabel("Blue means, shortest path between start and and!", SwingConstants.CENTER);
+    public static JLabel info5 = new JLabel("Start: UP-LEFT, End: DOWN-RIGHT!", SwingConstants.CENTER);
     public static JSlider fpssetter;
     public static JCheckBox allowdiagnal;
 
@@ -36,7 +41,7 @@ public class Driver implements Runnable {
     public static int xMAX = 16; //24 : 18
     public static int yMAX = 16;
     int screenheight = 792;
-    int screenwidth = screenheight / 2 * 3;
+    int screenwidth = (screenheight / 2 * 3);
 
 
     public Driver() {
@@ -52,7 +57,7 @@ public class Driver implements Runnable {
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
-        c.ipadx = 792;
+        c.ipadx = 840;
         c.ipady = 800;
         frame.add(canvas = new Canvas(), c);
         canvas.addMouseListener(new MouseHandler());
@@ -164,11 +169,35 @@ public class Driver implements Runnable {
         c.gridx = 0;
         c.gridy = 7;
         c.gridwidth = 3;
+        panel.add(info1, c);
+        c.gridx = 0;
+        c.gridy = 8;
+        c.gridwidth = 3;
+        panel.add(info2, c);
+        c.gridx = 0;
+        c.gridy = 9;
+        c.gridwidth = 3;
+        panel.add(info3, c);
+        c.gridx = 0;
+        c.gridy = 10;
+        c.gridwidth = 3;
+        panel.add(info4, c);
+        c.gridx = 0;
+        c.gridy = 11;
+        c.gridwidth = 3;
+        panel.add(info5, c);
+
+        /*
+        c.gridx = 0;
+        c.gridy = 7;
+        c.gridwidth = 3;
         panel.add(framerate, c);
         c.gridx = 0;
         c.gridy = 8;
         c.gridwidth = 3;
         panel.add(fpssetter, c);
+
+         */
         frame.setSize(screenwidth, screenheight); //1217 : 940
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
