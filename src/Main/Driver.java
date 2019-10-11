@@ -62,7 +62,7 @@ public class Driver implements Runnable {
         c.ipadx = 225;
         c.ipady = 0;
         frame.add(panel = new JPanel(), c);
-        panel.setBorder(BorderFactory.createLineBorder(Color.black));
+        //panel.setBorder(BorderFactory.createLineBorder(Color.black));
         //panel.setBackground(Color.BLACK);
         panel.setLayout(new GridBagLayout());
 
