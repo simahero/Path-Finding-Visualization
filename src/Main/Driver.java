@@ -1,13 +1,9 @@
 package Main;
 
-import Main.Algorithms.Astar;
-import Main.Algorithms.Dijkstra;
 import Main.Algorithms.Pathfinder;
 import Main.EventHandlers.ButtonHandler;
 import Main.EventHandlers.MouseHandler;
 import Main.Mategenerator.MazeGenerator;
-import javafx.scene.layout.Border;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -19,20 +15,23 @@ public class Driver implements Runnable {
     private JPanel panel;
     public static Pathfinder pathfinder;
 
-    ButtonHandler bh;
-    JButton start;
-    JButton stop;
-    JButton addwalls;
-    JLabel wall = new JLabel("Likelyhood of walls in %", SwingConstants.CENTER);
-    JLabel diagnals = new JLabel("Allow diagnal moves?", SwingConstants.CENTER);
-    JButton wipeboard;
+    public static ButtonHandler bh;
+    public static JButton start;
+    public static JButton stop;
+    public static JButton wipeboard;
+    public static JButton addwalls;
+    public static JLabel wall = new JLabel("Likelyhood of walls in %", SwingConstants.CENTER);
+    public static JLabel diagnals = new JLabel("Allow diagnal moves?", SwingConstants.CENTER);
+    public static JSlider slider;
+    public static JComboBox algorithm;
+    public static JLabel framerate = new JLabel("Set the framerate here!", SwingConstants.CENTER);
+    public static JSlider fpssetter;
     public static JCheckBox allowdiagnal;
-    JSlider slider;
-    JComboBox algorithm;
 
     public static Thread t;
     public static Driver d;
 
+    public static int fps = 30;
     public static int s = 47;
     public static int xMAX = 16; //24 : 18
     public static int yMAX = 16;
@@ -43,6 +42,12 @@ public class Driver implements Runnable {
     public Driver() {
         frame = new JFrame("Pathfinder");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        /*******************************************
+         *         ADDIMG CANVAS AND PANEL
+         *       TO THEIR CORRESPONDIG PLACE
+         *******************************************/
+
         frame.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
@@ -58,6 +63,7 @@ public class Driver implements Runnable {
         c.ipady = 0;
         frame.add(panel = new JPanel(), c);
         panel.setBorder(BorderFactory.createLineBorder(Color.black));
+        //panel.setBackground(Color.BLACK);
         panel.setLayout(new GridBagLayout());
 
         /*******************************************
@@ -65,13 +71,13 @@ public class Driver implements Runnable {
          *******************************************/
 
         start = new JButton("GO!");
-        start.setActionCommand("go");
+        start.setActionCommand("start");
         start.addActionListener(bh = new ButtonHandler());
         stop = new JButton("STOP!");
         stop.setActionCommand("stop");
         stop.addActionListener(bh);
         addwalls = new JButton("Add random walls!");
-        addwalls.setActionCommand("clear");
+        addwalls.setActionCommand("addwalls");
         addwalls.addActionListener(bh);
         wipeboard = new JButton("Clear!");
         wipeboard.setActionCommand("wipeboard");
@@ -87,6 +93,10 @@ public class Driver implements Runnable {
         slider.setMajorTickSpacing(10);
         slider.setMinorTickSpacing(1);
         slider.setPaintLabels(true);
+        fpssetter = new JSlider(JSlider.HORIZONTAL, 0, 600, 60);
+        fpssetter.addChangeListener(bh);
+        fpssetter.setMajorTickSpacing(100);
+        fpssetter.setPaintLabels(true);
 
         /*******************************************
          *             ADDIMG CHECKBOXES
@@ -105,11 +115,16 @@ public class Driver implements Runnable {
         algorithm.setSelectedIndex(0);
         algorithm.addActionListener(bh);
 
+        /*******************************************
+         *            SETTING BUTTONS
+         *        TO THEIR CORRESPONDING
+         *                 PLACE
+         *******************************************/
 
         c.ipadx = 0;
         c.ipady = 0;
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.insets = new Insets(5, 0, 1, 0);
+        c.insets = new Insets(9, 0, 1, 0);
         c.gridx = 0;
         c.gridy = 0;
         c.gridwidth = 2;
@@ -146,6 +161,14 @@ public class Driver implements Runnable {
         c.gridy = 6;
         c.gridwidth = 3;
         panel.add(algorithm, c);
+        c.gridx = 0;
+        c.gridy = 7;
+        c.gridwidth = 3;
+        panel.add(framerate, c);
+        c.gridx = 0;
+        c.gridy = 8;
+        c.gridwidth = 3;
+        panel.add(fpssetter, c);
         frame.setSize(screenwidth, screenheight); //1217 : 940
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
@@ -155,7 +178,7 @@ public class Driver implements Runnable {
 
     @Override
     public void run() {
-        BasicTimer basicTimer = new BasicTimer(20);
+        BasicTimer basicTimer = new BasicTimer(fps);
         MazeGenerator mg = new MazeGenerator();
         Pathfinder.selectItem();
         pathfinder.init();
@@ -166,7 +189,7 @@ public class Driver implements Runnable {
             screenwidth = screenheight / 2 * 3;
             frame.setSize(screenwidth, screenheight);
             //s = (frame.getHeight()/yMAX+6);
-            if (ButtonHandler.go) {
+            if (ButtonHandler.start) {
                 pathfinder.addNeighbour();
                 if (ButtonHandler.allowdiagnals) {
                     pathfinder.addNeighbourDiagnal();
@@ -174,17 +197,16 @@ public class Driver implements Runnable {
                 update();
             }
             render();
-            if (ButtonHandler.clear) {
+            if (ButtonHandler.addwalls) {
                 Pathfinder.reset();
                 pathfinder.init();
                 mg.addRandomWalls(Pathfinder.list);
-                ButtonHandler.clear = false;
+                ButtonHandler.addwalls = false;
             }
             if (ButtonHandler.wipeboard) {
                 Pathfinder.wipeboard();
                 ButtonHandler.wipeboard = false;
             }
-            System.out.println(ButtonHandler.selectedItem);
         }
     }
 

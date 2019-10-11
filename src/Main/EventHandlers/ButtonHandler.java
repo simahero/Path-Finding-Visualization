@@ -15,8 +15,8 @@ import java.nio.file.Path;
 
 public class ButtonHandler implements ActionListener, ChangeListener, ItemListener {
 
-    public static boolean go = false;
-    public static boolean clear = false;
+    public static boolean start = false;
+    public static boolean addwalls = false;
     public static boolean wipeboard = false;
     public static boolean allowdiagnals = false;
     public static String selectedItem = "A* algorithm";
@@ -24,19 +24,19 @@ public class ButtonHandler implements ActionListener, ChangeListener, ItemListen
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() instanceof JButton) {
-            if (e.getActionCommand().equals("go")) {
-                go = true;
-                clear = false;
+            if (e.getActionCommand().equals("start")) {
+                start = true;
+                addwalls = false;
             }
             if (e.getActionCommand().equals("stop")) {
-                go = false;
+                start = false;
             }
-            if (e.getActionCommand().equals("clear")) {
-                go = false;
-                clear = true;
+            if (e.getActionCommand().equals("addwalls")) {
+                start = false;
+                addwalls = true;
             }
             if (e.getActionCommand().equals("wipeboard")) {
-                go = false;
+                start = false;
                 wipeboard = true;
             }
         }
@@ -50,7 +50,12 @@ public class ButtonHandler implements ActionListener, ChangeListener, ItemListen
 
     @Override
     public void stateChanged(ChangeEvent e) {
-        MazeGenerator.e = (double)((JSlider) e.getSource()).getValue()/100;
+        JSlider source = (JSlider)e.getSource();
+        if (source == Driver.slider) {
+            MazeGenerator.e = (double) ((JSlider) e.getSource()).getValue() / 100;
+        } else if (source == Driver.fpssetter){
+            Driver.fps = ((JSlider) e.getSource()).getValue();
+        }
     }
 
     @Override
