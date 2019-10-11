@@ -1,5 +1,7 @@
 package Main.Algorithms;
 
+import Main.Driver;
+import Main.EventHandlers.ButtonHandler;
 import Main.Node;
 import java.util.ArrayList;
 import static Main.Driver.xMAX;
@@ -118,6 +120,9 @@ public abstract class Pathfinder {
         openset.clear();
         closedset.clear();
         path.clear();
+        for (Node n : wallset){
+            n.isWall = false;
+        }
         wallset.clear();
         openset.add(start);
         deleteNeightbours();
@@ -128,6 +133,15 @@ public abstract class Pathfinder {
             removeWall(list[x][y]);
         } else {
             addWall(list[x][y]);
+        }
+    }
+
+    public static void selectItem(){
+        Driver.pathfinder = null;
+        if (ButtonHandler.selectedItem.equals("A* algorithm")) {
+            Driver.pathfinder = new Astar();
+        } else if (ButtonHandler.selectedItem.equals("Dijkstra's algorithm")) {
+            Driver.pathfinder = new Dijkstra();
         }
     }
 
