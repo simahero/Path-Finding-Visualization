@@ -1,4 +1,4 @@
-package Main.Mategenerator;
+package Main.Mazegenerator;
 
 public class Chamber {
 

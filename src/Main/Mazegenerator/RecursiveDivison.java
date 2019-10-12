@@ -1,9 +1,6 @@
-package Main.Mategenerator;
+package Main.Mazegenerator;
 
 import Main.Node;
-
-import static Main.Driver.xMAX;
-import static Main.Driver.yMAX;
 
 public class RecursiveDivison {
 

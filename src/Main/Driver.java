@@ -3,7 +3,7 @@ package Main;
 import Main.Algorithms.Pathfinder;
 import Main.EventHandlers.ButtonHandler;
 import Main.EventHandlers.MouseHandler;
-import Main.Mategenerator.MazeGenerator;
+import Main.Mazegenerator.MazeGenerator;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
