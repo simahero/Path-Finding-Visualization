@@ -60,6 +60,7 @@ public class Astar extends Pathfinder {
         }
     }
 
+    //REAL DISTANCE BETWEEN TWO BLOCK USED FOR ASTAR
     private static double heuristic(Node a, Node b) {
         return Math.sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
     }

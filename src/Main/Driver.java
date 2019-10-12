@@ -15,6 +15,10 @@ public class Driver implements Runnable {
     private JPanel panel;
     public static Pathfinder pathfinder;
 
+
+    /*******************************************
+     *         DECLARING BUTTONS
+     *******************************************/
     public static ButtonHandler bh;
     public static JButton start;
     public static JButton stop;
@@ -33,17 +37,14 @@ public class Driver implements Runnable {
     public static JSlider fpssetter;
     public static JCheckBox allowdiagnal;
 
-    public static Thread t;
-    public static Driver d;
-
     public static int fps = 30;
-    public static int s = 47;
-    public static int xMAX = 16; //24 : 18
-    public static int yMAX = 16;
-    int screenheight = 792;
-    int screenwidth = (screenheight / 2 * 3);
+    public static int s = 47; // SIZE OF BLOCKS
+    public static int xMAX = 16; //NUMBER OF BLOCK ON X AXIS
+    public static int yMAX = 16; // NUMBER OF BLOCK ON Y AXIS
+    int screenheight = 792; //FRAME SIZE
+    int screenwidth = (screenheight / 2 * 3); //FRAME SIZE
 
-
+    // MAKING THE FRAME, INITIALIZING THE ALGORITHM STARTING THE THE THREAD
     public Driver() {
         frame = new JFrame("Pathfinder");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

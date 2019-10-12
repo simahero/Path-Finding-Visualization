@@ -10,6 +10,7 @@ import static Main.Driver.yMAX;
 
 public abstract class Pathfinder {
 
+    //BASIC VALUES FOR PATHFINDER
     static public Node start;
     static public Node end;
     static public Node[][] list = new Node[xMAX][yMAX];
@@ -20,6 +21,7 @@ public abstract class Pathfinder {
 
     public abstract void init();
 
+    //DELETE THE NEIGHBOURS
     public static void deleteNeightbours(){
         for (int i = 0; i < xMAX; i++) {
             for (int j = 0; j < yMAX; j++) {
@@ -29,6 +31,7 @@ public abstract class Pathfinder {
         }
     }
 
+    //ADDING NEIGHBOURS IF THEY AREN'T WALLS
     public void addNeighbour() {
         for (int i = 0; i < xMAX; i++) {
             for (int j = 0; j < yMAX; j++) {
@@ -59,6 +62,7 @@ public abstract class Pathfinder {
         }
     }
 
+    //ADDING NEIGHBOURS DIAGONAL IF THEY AREN'T WALLS
     public void addNeighbourDiagnal(){
         for (int i = 0; i < xMAX; i++) {
             for (int j = 0; j < yMAX; j++) {
@@ -87,8 +91,10 @@ public abstract class Pathfinder {
         }
     }
 
+    //MAIN METHOD FOR FINDING THE PATH
     public abstract void search();
 
+    //RECURSIVELY GETTING THE PATH
     public void getPath(Node end) {
         Node temp = end;
         path.add(temp);
@@ -98,17 +104,20 @@ public abstract class Pathfinder {
         }
     }
 
+    //ADDING WALLS
     public static void addWall(Node notWall){
         notWall.isWall = true;
         wallset.add(notWall);
     }
 
+    //REMOVING WALLS
     public static void removeWall(Node wall){
         wall.isWall = false;
         wallset.remove(wall);
 
     }
 
+    //RESET ALL THE VALUES
     public static void reset(){
         openset.clear();
         closedset.clear();
@@ -116,6 +125,7 @@ public abstract class Pathfinder {
         wallset.clear();
     }
 
+    //RESET ALL THE VALUES
     public static void wipeboard(){
         openset.clear();
         closedset.clear();
@@ -128,6 +138,7 @@ public abstract class Pathfinder {
         deleteNeightbours();
     }
 
+    //ADD WALLS BY CLICKING
     public static void addClickedWall(int x, int y){
         if (list[x][y].isWall){
             removeWall(list[x][y]);
@@ -136,6 +147,7 @@ public abstract class Pathfinder {
         }
     }
 
+    // SELECTING THE ALGORITHM
     public static void selectItem(){
         Driver.pathfinder = null;
         if (ButtonHandler.selectedItem.equals("A* algorithm")) {

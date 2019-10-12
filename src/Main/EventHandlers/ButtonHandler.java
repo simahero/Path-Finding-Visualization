@@ -24,23 +24,28 @@ public class ButtonHandler implements ActionListener, ChangeListener, ItemListen
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() instanceof JButton) {
+            //START THE ALGORITHM
             if (e.getActionCommand().equals("start")) {
                 start = true;
                 addwalls = false;
             }
+            //STOP THE ALGORITHM
             if (e.getActionCommand().equals("stop")) {
                 start = false;
             }
+            //ADDING RANDOM WALLS
             if (e.getActionCommand().equals("addwalls")) {
                 start = false;
                 addwalls = true;
             }
+            //CLEAR THE BOARD
             if (e.getActionCommand().equals("wipeboard")) {
                 start = false;
                 wipeboard = true;
             }
         }
 
+        //SELECT THE ALGORITHM
         if (e.getSource() instanceof JComboBox) {
             JComboBox cb = (JComboBox) e.getSource();
             selectedItem = (String) cb.getSelectedItem();
@@ -50,6 +55,7 @@ public class ButtonHandler implements ActionListener, ChangeListener, ItemListen
 
     @Override
     public void stateChanged(ChangeEvent e) {
+        //APPLY SLIDER VALUES
         JSlider source = (JSlider)e.getSource();
         if (source == Driver.slider) {
             MazeGenerator.e = (double) ((JSlider) e.getSource()).getValue() / 100;
@@ -60,6 +66,7 @@ public class ButtonHandler implements ActionListener, ChangeListener, ItemListen
 
     @Override
     public void itemStateChanged(ItemEvent e) {
+        //ALLOW DIAGONAL MOVES?
         Object source = e.getItemSelectable();
         if (source == Driver.allowdiagnal){
             if (Driver.allowdiagnal.isSelected()){
